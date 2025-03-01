@@ -1,4 +1,5 @@
-package com.Kunal.FirstProject;
+package com.Kunal.FirstProject.controller;
+import com.Kunal.FirstProject.dto.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,5 +19,10 @@ public class HelloController {
     @GetMapping("/param/{name}")
     public String sayHelloPathVariable(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
+    }
+
+    @PostMapping("/post")
+    public String sayHelloPost(@RequestBody User user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
 }
