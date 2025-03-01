@@ -11,7 +11,12 @@ public class HelloController {
     }
 
     @GetMapping("/query")
-    public String sayHello(@RequestParam String name) {
+    public String sayRequestParam(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
+
+    @GetMapping("/param/{name}")
+    public String sayHelloPathVariable(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
     }
 }
